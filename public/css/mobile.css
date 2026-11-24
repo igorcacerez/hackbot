@@ -69,7 +69,7 @@ button, .btn, .node, .rival, .tab, .api span, .shop-item, .codex-item { touch-ac
   /* ---------- fase (layout em coluna, sem rolar a página) ---------- */
   .play, .arena-play { display: flex; flex-direction: column; gap: 0; padding: 0; min-height: 0; flex: 1; }
   .stage-wrap { flex: none; gap: 0; }
-  #stage, #a-stage { height: 34dvh; min-height: 170px; border-radius: 0; border-left: 0; border-right: 0; box-shadow: inset 0 0 50px rgba(106,44,255,.35); transition: height .25s ease; }
+  #stage, #a-stage { height: clamp(120px, 34dvh, 320px); min-height: 0; border-radius: 0; border-left: 0; border-right: 0; box-shadow: inset 0 0 50px rgba(106,44,255,.35); transition: height .25s ease; }
   #mission {
     border-radius: 0; border-left: 0; border-right: 0; box-shadow: none; font-size: 15px; line-height: 1.35;
     padding: 8px 40px 8px 12px; max-height: 3.2em; overflow: hidden; position: relative; cursor: pointer; transition: max-height .25s ease;
@@ -109,10 +109,25 @@ button, .btn, .node, .rival, .tab, .api span, .shop-item, .codex-item { touch-ac
   .controls .btn.small { min-width: 44px; min-height: 48px; font-size: 16px; padding: 4px 8px; }
   .btn.run { min-height: 52px; font-size: 21px; }
   .lines { font-size: 11px; min-width: 56px; }
-  /* digitando: o código ganha espaço, o mundo encolhe */
-  body.typing #stage, body.typing #a-stage { height: 18dvh; min-height: 110px; }
-  body.typing #mission, body.typing #term, body.typing #a-term, body.typing #a-result, body.typing .rivals, body.typing .ranking { display: none; }
+  /* ---------- modo digitação (teclado aberto) ----------
+     Com o teclado ocupando metade da tela, só fica o que ajuda a escrever:
+     editor em largura total + comandos + símbolos + barra compacta (Pronto / Rodar). */
+  .kbd-done { display: none; }
   body:not(.typing) .symbar { display: none; }
+  body.typing .screen.active > .bar,
+  body.typing .stage-wrap,
+  body.typing #term, body.typing #a-term, body.typing .rivals, body.typing .ranking { display: none !important; }
+  body.typing .play, body.typing .arena-play { flex-direction: column !important; }
+  body.typing .panel { width: 100%; }
+  body.typing .tabs { padding-top: max(6px, env(safe-area-inset-top)); }
+  body.typing .editor { min-height: 96px; }
+  body.typing #api, body.typing #a-api { padding: 4px 8px; }
+  body.typing .api span { min-height: 30px; padding: 3px 9px; }
+  body.typing .symbar { padding: 5px 8px; }
+  body.typing .controls { padding: 6px 8px; border-top-width: 2px; }
+  body.typing .controls > :not(.run):not(.kbd-done) { display: none; }
+  body.typing .btn.run { min-height: 42px; font-size: 18px; }
+  body.typing .kbd-done { display: inline-block; min-height: 42px; font-size: 16px; padding: 4px 14px; flex: none; background: var(--paper); }
 
   /* ---------- arena ---------- */
   #arena .bar .seg { order: 3; }
@@ -120,7 +135,7 @@ button, .btn, .node, .rival, .tab, .api span, .shop-item, .codex-item { touch-ac
   #arena .bar { flex-wrap: wrap; row-gap: 6px; }
   #arena .bar .seg { width: 100%; justify-content: stretch; }
   #arena .bar .seg button { flex: 1; min-height: 38px; }
-  #a-stage { height: 26dvh; min-height: 150px; }
+  #a-stage { height: clamp(110px, 26dvh, 260px); }
   #a-term { height: 48px; }
   .rivals { padding: 6px 8px; gap: 8px; background: rgba(20,11,40,.85); scrollbar-width: none; }
   .rivals::-webkit-scrollbar { display: none; }
@@ -207,12 +222,17 @@ button, .btn, .node, .rival, .tab, .api span, .shop-item, .codex-item { touch-ac
   .auth-card input, .auth-card select { font-size: 16px; min-height: 44px; }
 }
 
-/* telas baixas (celular deitado) */
-@media (max-width: 960px) and (max-height: 500px) and (orientation: landscape) {
-  #game .play { flex-direction: row; }
-  #stage { height: auto; flex: 1; }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* telas baixas: o editor nunca some (mundo e terminal encolhem primeiro) */
+@media (max-width: 760px) and (max-height: 620px) {
+  #mission { max-height: 2.2em; padding-top: 5px; padding-bottom: 5px; }
+  #term, #a-term { height: 40px; }
+  #api, #a-api { display: none; }
+  body.typing #api, body.typing #a-api { display: flex; }
+  .controls .btn.small { min-height: 42px; }
+  .btn.run { min-height: 44px; font-size: 18px; }
 }

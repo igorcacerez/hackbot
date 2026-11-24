@@ -50,6 +50,31 @@ buildBar($("#a-symbar"), $("#a-code"));
     hl.scrollLeft = ta.scrollLeft;
   });
 });
+// botão "Pronto": fecha o teclado e volta a mostrar o mundo
+[["#btn-run", "#code"], ["#a-fight", "#a-code"]].forEach(([runSel, taSel]) => {
+  const done = document.createElement("button");
+  done.type = "button"; done.className = "btn small kbd-done"; done.textContent = "✓ Pronto";
+  done.setAttribute("aria-label", "Fechar teclado");
+  done.addEventListener("pointerdown", (e) => { e.preventDefault(); $(taSel).blur(); document.body.classList.remove("typing"); });
+  $(runSel).insertAdjacentElement("beforebegin", done);
+});
+// mantém a linha do cursor visível acima do teclado
+function keepCaretVisible(ta) {
+  const editor = ta.closest(".editor");
+  if (!editor || !isMobile()) return;
+  const line = ta.value.slice(0, ta.selectionStart).split("\n").length;
+  const lh = parseFloat(getComputedStyle(ta).lineHeight) || 24;
+  const y = (line - 1) * lh + 10;
+  if (y < editor.scrollTop + lh || y > editor.scrollTop + editor.clientHeight - lh * 2) {
+    editor.scrollTop = Math.max(0, y - editor.clientHeight / 2);
+  }
+}
+["#code", "#a-code"].forEach((sel) => {
+  const ta = $(sel);
+  ["input", "click", "keyup"].forEach((ev) => ta.addEventListener(ev, () => keepCaretVisible(ta)));
+  ta.addEventListener("focus", () => setTimeout(() => keepCaretVisible(ta), 350)); // depois do teclado abrir
+});
+
 // ao rodar ou lutar, fecha o teclado para o mundo aparecer
 ["#btn-run", "#a-fight"].forEach((sel) => $(sel).addEventListener("pointerdown", () => {
   if (isMobile() && document.activeElement && document.activeElement.matches("#code, #a-code")) document.activeElement.blur();
