@@ -6,7 +6,7 @@ window.runSimulation = function (payload) {
       resolve({ events: [], result: "error", errMsg: "SyntaxError: " + err.message, errLine: null });
       return;
     }
-    const core = new URL("js/sim-core.js", location.href).href;
+    const core = new URL("js/sim-core.js?v=" + (window.HB_V || ""), location.href).href;
     const src = `importScripts(${JSON.stringify(core)}); self.onmessage = (e) => self.postMessage(SIM.simCore(e.data));`;
     const url = URL.createObjectURL(new Blob([src], { type: "text/javascript" }));
     const w = new Worker(url);

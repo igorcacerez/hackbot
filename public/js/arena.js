@@ -6,7 +6,7 @@ const HB = () => window.HB;
 const { MAP, STARTS, MAX_HP, MAX_TURNS, STARTER, RIVALS } = window.ARENA;
 
 // ---------- simulação (Web Worker com o núcleo compartilhado) ----------
-const CORE_URL = new URL("js/battle-core.js", location.href).href;
+const CORE_URL = new URL("js/battle-core.js?v=" + (window.HB_V || ""), location.href).href;
 function battle(codeA, codeB, seed) {
   return new Promise((resolve) => {
     const src = `importScripts(${JSON.stringify(CORE_URL)}); self.onmessage = (e) => self.postMessage(ARENA.battleCore(e.data));`;

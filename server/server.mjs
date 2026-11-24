@@ -16,6 +16,7 @@ const PORT = Number(process.env.PORT || 5177);
 // Por padrão só aceita conexões desta máquina. Para a sala de aula: HOST=0.0.0.0 atrás de um proxy HTTPS (e COOKIE_SECURE=1).
 const HOST = process.env.HOST || "127.0.0.1";
 const COOKIE_SECURE = process.env.COOKIE_SECURE === "1";
+const VERSAO = Date.now().toString(36); // muda a cada deploy (reinício)
 const CORE_SRC = fs.readFileSync(path.join(PUBLIC, "js", "battle-core.js"), "utf8");
 const CORE = (() => { const m = { exports: {} }; new Function("module", CORE_SRC)(m); return m.exports; })();
 const COURSES = ["js-do-zero-ao-dom"];
@@ -193,6 +194,15 @@ function servirArquivo(req, res) {
     const ext = path.extname(arq);
     // assets estáticos ficam em cache; HTML/JS/CSS sempre revalidam (deploy automático)
     const cache = /\.(png|jpg|webp|mp3|mp4|ico)$/.test(ext) ? "public, max-age=604800" : "no-cache";
+    if (ext === ".html" && req.method !== "HEAD") {
+      // cache-busting: cada deploy gera uma versão nova dos links de JS/CSS (o Cloudflare guarda esses arquivos por horas)
+      const html = fs.readFileSync(arq, "utf8")
+        .replace(/((?:src|href)="(?:\/)?(?:js|css)\/[\w.-]+\.(?:js|css))"/g, `$1?v=${VERSAO}"`)
+        .replace("</head>", `<script>window.HB_V=${JSON.stringify(VERSAO)}</script>
+</head>`);
+      res.writeHead(200, { "Content-Type": TIPOS[ext], "Cache-Control": "no-cache", "X-Content-Type-Options": "nosniff" });
+      return res.end(html);
+    }
     res.writeHead(200, { "Content-Type": TIPOS[ext] || "application/octet-stream", "Content-Length": st.size, "Cache-Control": cache, "X-Content-Type-Options": "nosniff" });
     if (req.method === "HEAD") return res.end();
     fs.createReadStream(arq).pipe(res);
