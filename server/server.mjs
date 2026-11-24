@@ -189,7 +189,7 @@ function servirArquivo(req, res) {
   const arq = path.normalize(path.join(PUBLIC, p));
   if (!arq.startsWith(PUBLIC + path.sep)) { res.writeHead(403); return res.end(); }
   fs.stat(arq, (err, st) => {
-    if (err || !st.isFile()) { res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" }); return res.end('<!doctype html><meta charset="utf-8"><title>Página não encontrada | HackBot</title><p style="font-family:sans-serif">Página não encontrada. <a href="/">Voltar ao HackBot</a></p>'); }
+    if (err || !st.isFile()) { res.writeHead(404, { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store" }); return res.end('<!doctype html><meta charset="utf-8"><title>Página não encontrada | HackBot</title><p style="font-family:sans-serif">Página não encontrada. <a href="/">Voltar ao HackBot</a></p>'); }
     const ext = path.extname(arq);
     // assets estáticos ficam em cache; HTML/JS/CSS sempre revalidam (deploy automático)
     const cache = /\.(png|jpg|webp|mp3|mp4|ico)$/.test(ext) ? "public, max-age=604800" : "no-cache";

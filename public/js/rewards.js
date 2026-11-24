@@ -119,7 +119,7 @@ function robotSrc(equip = save.equip) {
   const parts = [];
   if (equip.chapeu) parts.push(equip.chapeu.replace(/^hat_/, ""));
   if (equip.oculos) parts.push(equip.oculos.replace(/^glasses_/, ""));
-  return parts.length ? `assets/robo/${parts.join("_")}.png` : "assets/robot.png";
+  return parts.length ? `assets/robo/${parts.join("_")}.png?v=2` : "assets/robot.png";
 }
 function decorate(face, equip = save.equip) {
   face.querySelectorAll(".deco").forEach((d) => d.remove());
@@ -129,7 +129,7 @@ function decorate(face, equip = save.equip) {
   if (img.tagName === "IMG") {
     const src = robotSrc(equip);
     img.onerror = () => { img.onerror = null; img.src = "assets/robot.png"; };
-    if (!img.src.endsWith(src)) img.src = src;
+    if (!img.src.endsWith(src.replace(/^assets/, "assets"))) img.src = src;
   }
 }
 function laserColor(equip = save.equip) { const it = item(equip.laser); return it ? it.color : null; }
