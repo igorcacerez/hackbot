@@ -119,7 +119,7 @@ function robotSrc(equip = save.equip) {
   const parts = [];
   if (equip.chapeu) parts.push(equip.chapeu.replace(/^hat_/, ""));
   if (equip.oculos) parts.push(equip.oculos.replace(/^glasses_/, ""));
-  return parts.length ? `assets/robo/${parts.join("+")}.png` : "assets/robot.png";
+  return parts.length ? `assets/robo/${parts.join("_")}.png` : "assets/robot.png";
 }
 function decorate(face, equip = save.equip) {
   face.querySelectorAll(".deco").forEach((d) => d.remove());

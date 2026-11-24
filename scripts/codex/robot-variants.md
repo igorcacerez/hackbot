@@ -21,7 +21,7 @@ Save these 11 files in public/assets/robo/ (create the folder), with EXACTLY the
 4. wizard.png         (wizard hat only)
 5. crown.png          (crown only)
 6. cool.png           (sunglasses only, no hat)
-7. cap+cool.png       (cap + sunglasses)
+7. cap+cool.png       (cap + sunglasses; saved as cap_cool.png)
 8. headphones+cool.png
 9. horns+cool.png
 10. wizard+cool.png
