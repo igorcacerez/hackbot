@@ -1,5 +1,7 @@
 # HackBot 🤖
 
+🎮 **Jogue online:** https://roboscript.igorcacerez.com.br
+
 Jogo para aprender **JavaScript do zero ao DOM** (com CSS e HTML no caminho). O aluno não responde perguntas: ele **programa um robô** para atravessar fases, derrotar bugs e batalhar na Arena.
 
 ## Rodar
