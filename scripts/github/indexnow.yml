@@ -1,0 +1,20 @@
+name: Avisar buscadores (IndexNow)
+on:
+  push:
+    branches: [main]
+    paths: ["public/**"]
+jobs:
+  indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Esperar o deploy automático do Easypanel
+        run: sleep 90
+      - name: Enviar URLs para Bing, Yandex, Naver e Seznam
+        run: |
+          KEY=$(tr -d '[:space:]' < scripts/indexnow-key.txt)
+          B=https://roboscript.igorcacerez.com.br
+          curl -sf -X POST https://api.indexnow.org/IndexNow \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{\"host\":\"roboscript.igorcacerez.com.br\",\"key\":\"$KEY\",\"keyLocation\":\"$B/$KEY.txt\",\"urlList\":[\"$B/\",\"$B/aprender-javascript\",\"$B/llms.txt\",\"$B/llms-full.txt\"]}" \
+            -w "IndexNow: %{http_code}\n"

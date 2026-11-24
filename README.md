@@ -59,3 +59,10 @@ O jogo detecta os arquivos sozinho, por meio de `public/audio/manifest.json`.
 ## Adicionar uma fase
 
 Crie um objeto em `levels.js` (mapa em texto, `par` = meta de linhas, `must` = regras de prática, `lesson` = aula). Depois escreva a solução em `tests/levels.test.mjs` e rode `npm test`.
+
+## SEO, SMO e GEO
+
+- **Compartilhamento (SMO):** Open Graph e Twitter Card com imagem 1200×630 (`public/assets/og-image.jpg`).
+- **Buscadores:** `sitemap.xml`, `robots.txt`, URLs limpas, JSON-LD (VideoGame, Course, Article, FAQPage, BreadcrumbList) e a página de conteúdo `/aprender-javascript`.
+- **IAs (GEO):** `robots.txt` libera GPTBot, ClaudeBot, PerplexityBot, Google-Extended e outros. Os arquivos `/llms.txt` e `/llms-full.txt` resumem o projeto para as IAs. Depois de mudar fases ou aulas, rode `node scripts/gerar-llms.mjs`.
+- **IndexNow:** avise Bing, Yandex, Naver e Seznam a cada deploy copiando `scripts/github/indexnow.yml` para `.github/workflows/` (o push precisa de um token com o escopo `workflow`: `gh auth refresh -s workflow`).
