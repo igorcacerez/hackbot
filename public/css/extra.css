@@ -204,3 +204,5 @@
 /* lista de comandos não pode esmagar o editor */
 #api, #a-api { max-height: 84px; overflow-y: auto; flex-shrink: 0; }
 .editor { min-height: 200px; }
+.seo-link { margin-top: 18px; font-size: 16px; }
+.seo-link a { color: #c9b8ff; text-decoration: underline; }

@@ -178,15 +178,23 @@ function lerCorpo(req, max = 256 * 1024) {
   });
 }
 const TIPOS = { ".html": "text/html; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".css": "text/css; charset=utf-8", ".png": "image/png",
-  ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".mp3": "audio/mpeg", ".json": "application/json", ".webp": "image/webp", ".mp4": "video/mp4" };
+  ".jpg": "image/jpeg", ".svg": "image/svg+xml", ".mp3": "audio/mpeg", ".json": "application/json", ".webp": "image/webp", ".mp4": "video/mp4",
+  ".txt": "text/plain; charset=utf-8", ".xml": "application/xml; charset=utf-8", ".webmanifest": "application/manifest+json", ".ico": "image/x-icon" };
 function servirArquivo(req, res) {
   let p = decodeURIComponent(new URL(req.url, "http://x").pathname);
   if (p === "/") p = "/index.html";
+  // URLs limpas: /aprender-javascript -> aprender-javascript.html ; /x.html -> 301 para /x
+  if (p.endsWith(".html") && p !== "/index.html") { res.writeHead(301, { Location: p.slice(0, -5) }); return res.end(); }
+  if (!path.extname(p)) p += ".html";
   const arq = path.normalize(path.join(PUBLIC, p));
   if (!arq.startsWith(PUBLIC + path.sep)) { res.writeHead(403); return res.end(); }
   fs.stat(arq, (err, st) => {
-    if (err || !st.isFile()) { res.writeHead(404); return res.end("não encontrado"); }
-    res.writeHead(200, { "Content-Type": TIPOS[path.extname(arq)] || "application/octet-stream", "Content-Length": st.size, "Cache-Control": "no-cache" });
+    if (err || !st.isFile()) { res.writeHead(404, { "Content-Type": "text/html; charset=utf-8" }); return res.end('<!doctype html><meta charset="utf-8"><title>Página não encontrada | HackBot</title><p style="font-family:sans-serif">Página não encontrada. <a href="/">Voltar ao HackBot</a></p>'); }
+    const ext = path.extname(arq);
+    // assets estáticos ficam em cache; HTML/JS/CSS sempre revalidam (deploy automático)
+    const cache = /\.(png|jpg|webp|mp3|mp4|ico)$/.test(ext) ? "public, max-age=604800" : "no-cache";
+    res.writeHead(200, { "Content-Type": TIPOS[ext] || "application/octet-stream", "Content-Length": st.size, "Cache-Control": cache, "X-Content-Type-Options": "nosniff" });
+    if (req.method === "HEAD") return res.end();
     fs.createReadStream(arq).pipe(res);
   });
 }
