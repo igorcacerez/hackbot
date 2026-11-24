@@ -331,5 +331,13 @@ async function sendBot() {
   finally { btn.disabled = false; btn.textContent = "🚀 Enviar minha IA para o ranking"; }
 }
 
+let arenaResize;
+window.addEventListener("resize", () => {
+  clearTimeout(arenaResize);
+  arenaResize = setTimeout(() => {
+    if ($("#arena").classList.contains("active") && !$("#a-fight").classList.contains("running")) buildArena(STARTS.map((s) => ({ ...s, hp: MAX_HP })));
+  }, 150);
+});
+
 window.Arena = { open, battle, RIVALS };
 })();

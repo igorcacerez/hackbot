@@ -1,0 +1,218 @@
+/* =========================================================
+   HackBot — experiência mobile
+   Princípios: uma coluna, nada escondido atrás do teclado,
+   ações principais ao alcance do polegar, toques de 44px,
+   inputs com 16px (evita zoom no iOS) e áreas seguras.
+   ========================================================= */
+
+/* elementos que só existem no celular */
+.symbar, #mnav { display: none; }
+button, .btn, .node, .rival, .tab, .api span, .shop-item, .codex-item { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+@media (max-width: 760px) {
+  html, body { height: 100%; overflow: hidden; overscroll-behavior: none; }
+  body { font-size: 16px; }
+  .screen { position: fixed; inset: 0; height: 100dvh; min-height: 0; }
+  .btn:hover { transform: none; box-shadow: var(--shadow); }
+  .btn:active { transform: translateY(4px); box-shadow: 0 2px 0 var(--ink); }
+
+  /* ---------- barra superior compacta ---------- */
+  .bar { gap: 8px; padding: max(8px, env(safe-area-inset-top)) 10px 8px; flex-wrap: nowrap; min-height: 56px; }
+  .bar h2 { font-size: 19px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+  .bar .btn.small { min-height: 40px; min-width: 40px; padding: 2px 10px; font-size: 15px; flex: none; }
+  .bar .pill { font-size: 15px; padding: 2px 10px; flex: none; }
+  .lvl-title { min-width: 0; flex: 1; }
+  .lvl-title small { display: block; font-size: 10px; letter-spacing: 1px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .lvl-title h2 { font-size: 17px; }
+  .topnav, .user-pill, #map .bar h2 { display: none; }
+  #map .bar::after { content: "Mapa do Curso"; font: 800 19px "Baloo 2"; flex: 1; }
+  #map .bar .pill.coins { margin-left: 0; }
+  #game .bar [data-go="map"], #arena .bar [data-go="map"] { font-size: 0; }
+  #game .bar [data-go="map"]::before, #arena .bar [data-go="map"]::before { content: "⟵"; font-size: 18px; }
+  #btn-lesson { font-size: 0 !important; } #btn-lesson::before { content: "🎬"; font-size: 18px; }
+  #chip-count { display: none; }
+
+  /* ---------- tela de título ---------- */
+  .title-robot.sprite, .title-robot.emoji { width: 150px; height: 150px; }
+  .logo { font-size: 68px; }
+  .logo span { -webkit-text-stroke-width: 4px; }
+  .tag { font-size: 18px; padding: 0 16px; }
+  .btn.big { font-size: 28px; padding: 10px 40px; }
+  .title-bugs .sprite { width: 70px; height: 70px; opacity: .55; }
+  .tb1 { left: 2%; top: 6%; } .tb2 { right: 3%; top: 10%; } .tb3 { left: auto; right: 4%; bottom: 3%; }
+  .auth-row .btn.small { min-height: 44px; padding: 4px 18px; }
+
+  /* ---------- navegação inferior ---------- */
+  #mnav {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; display: none;
+    grid-template-columns: repeat(4, 1fr); background: #140b28; border-top: 4px solid var(--ink);
+    padding: 4px 4px max(6px, env(safe-area-inset-bottom));
+  }
+  body.nav-on #mnav { display: grid; }
+  #mnav button { background: none; border: 0; color: #b9a8e6; font: 700 12px "Baloo 2"; display: flex; flex-direction: column; align-items: center; gap: 0; min-height: 52px; justify-content: center; border-radius: 12px; }
+  #mnav button span { font-size: 22px; line-height: 1.1; }
+  #mnav button.on { color: var(--yellow); background: rgba(255,210,63,.1); }
+  body.nav-on .screen.active > :last-child { padding-bottom: calc(72px + env(safe-area-inset-bottom)); }
+
+  /* ---------- mapa ---------- */
+  #map-path { padding: 14px 12px; gap: 16px; }
+  .module { padding: 12px; border-radius: 22px; }
+  .module header { gap: 10px; flex-wrap: wrap; }
+  .module header > div:first-child { flex: 1 1 100%; }
+  .module header h3 { font-size: 22px; }
+  .module .nodes { gap: 14px 6px; justify-content: space-around; }
+  .module .node { width: 98px; }
+  .module .node .disc { width: 70px; height: 70px; font-size: 30px; }
+  .node .nm { font-size: 14px; }
+  .new-badge { font-size: 9px; right: -4px; }
+
+  /* ---------- fase (layout em coluna, sem rolar a página) ---------- */
+  .play, .arena-play { display: flex; flex-direction: column; gap: 0; padding: 0; min-height: 0; flex: 1; }
+  .stage-wrap { flex: none; gap: 0; }
+  #stage, #a-stage { height: 34dvh; min-height: 170px; border-radius: 0; border-left: 0; border-right: 0; box-shadow: inset 0 0 50px rgba(106,44,255,.35); transition: height .25s ease; }
+  #mission {
+    border-radius: 0; border-left: 0; border-right: 0; box-shadow: none; font-size: 15px; line-height: 1.35;
+    padding: 8px 40px 8px 12px; max-height: 3.2em; overflow: hidden; position: relative; cursor: pointer; transition: max-height .25s ease;
+  }
+  #mission::before { display: none; }
+  #mission::after { content: "▾"; position: absolute; right: 12px; top: 6px; font-size: 18px; color: var(--purple); }
+  #mission.open { max-height: 40vh; overflow: auto; }
+  #mission.open::after { content: "▴"; }
+  .panel { flex: 1; min-height: 0; border-radius: 0; border: 0; box-shadow: none; }
+  .tabs { padding: 6px 8px 0; overflow-x: auto; }
+  .tab { min-height: 36px; font-size: 14px; }
+  .editor { min-height: 0; flex: 1; overflow: auto; -webkit-overflow-scrolling: touch; }
+  .gutter { min-width: 30px; padding: 10px 4px 10px 6px; font-size: 13px; line-height: 1.6; }
+  #hl, #code, #a-hl, #a-code { font-size: 16px; line-height: 1.5; padding: 10px 10px 10px 2px; }
+  .gutter, .gutter div { line-height: 24px; font-size: 13px; }
+  #hl, #code, #a-hl, #a-code { line-height: 24px; }
+  /* comandos desbloqueados: uma linha com rolagem lateral */
+  #api, #a-api { flex-wrap: nowrap; overflow-x: auto; max-height: none; padding: 6px 8px; scrollbar-width: none; }
+  #api::-webkit-scrollbar, #a-api::-webkit-scrollbar { display: none; }
+  .api span { flex: none; font-size: 13px; padding: 6px 10px; min-height: 34px; display: flex; align-items: center; }
+  /* barra de símbolos: os caracteres que o teclado do celular esconde */
+  .symbar { display: flex; gap: 5px; overflow-x: auto; padding: 6px 8px; background: #0e0720; border-top: 2px solid #2a1a52; scrollbar-width: none; }
+  .symbar::-webkit-scrollbar { display: none; }
+  .symbar button {
+    flex: none; min-width: 42px; height: 40px; border-radius: 10px; border: 2px solid #3d2380; background: #241446; color: var(--cyan);
+    font: 700 18px "JetBrains Mono", monospace; padding: 0 8px;
+  }
+  .symbar button:active { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
+  .symbar button.wide { font-size: 14px; color: var(--yellow); }
+  /* terminal curto */
+  #term, #a-term { height: 64px; padding: 6px 10px; font-size: 13px; }
+  /* ordem no painel: código, comandos, símbolos, terminal e, por último, as ações */
+  .panel > #term, .panel > #a-term { order: 1; }
+  .panel > .controls { order: 2; }
+  /* ações ao alcance do polegar */
+  .controls { padding: 8px 8px max(8px, env(safe-area-inset-bottom)); gap: 6px; background: #140b28; border-top: 3px solid var(--ink); }
+  .controls .btn.small { min-width: 44px; min-height: 48px; font-size: 16px; padding: 4px 8px; }
+  .btn.run { min-height: 52px; font-size: 21px; }
+  .lines { font-size: 11px; min-width: 56px; }
+  /* digitando: o código ganha espaço, o mundo encolhe */
+  body.typing #stage, body.typing #a-stage { height: 18dvh; min-height: 110px; }
+  body.typing #mission, body.typing #term, body.typing #a-term, body.typing #a-result, body.typing .rivals, body.typing .ranking { display: none; }
+  body:not(.typing) .symbar { display: none; }
+
+  /* ---------- arena ---------- */
+  #arena .bar .seg { order: 3; }
+  #arena .bar #a-names { display: none; }
+  #arena .bar { flex-wrap: wrap; row-gap: 6px; }
+  #arena .bar .seg { width: 100%; justify-content: stretch; }
+  #arena .bar .seg button { flex: 1; min-height: 38px; }
+  #a-stage { height: 26dvh; min-height: 150px; }
+  #a-term { height: 48px; }
+  .rivals { padding: 6px 8px; gap: 8px; background: rgba(20,11,40,.85); scrollbar-width: none; }
+  .rivals::-webkit-scrollbar { display: none; }
+  .rival.on .rv-txt b { color: var(--ink); }
+  .rival { max-width: 200px; padding: 4px 10px 4px 4px; }
+  .rv-av { width: 40px; height: 40px; flex-basis: 40px; }
+  .rv-txt small { display: none; }
+  .ranking { max-height: 30dvh; border-radius: 0; border-left: 0; border-right: 0; }
+  .rank-row { grid-template-columns: 30px 1fr 52px 74px; font-size: 14px; }
+  .rank-row > span:nth-child(4) { display: none; }
+  .rank-top { gap: 6px; } .rank-top small { font-size: 12px; }
+  .count { font-size: 76px; }
+  #a-result b { font-size: 38px; }
+
+  /* ---------- aula ---------- */
+  #lesson { padding: 0; }
+  .ls-card { width: 100%; height: 100dvh; border-radius: 0; border: 0; }
+  .ls-card header { padding: max(8px, env(safe-area-inset-top)) 10px 8px; gap: 8px; }
+  .ls-card header h3 { font-size: 17px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .ls-card header .btn.small { min-width: 40px; min-height: 40px; }
+  .ls-dots i { width: 8px; height: 8px; }
+  .ls-body { grid-template-columns: 1fr; position: relative; }
+  .ls-mentor-wrap { display: flex; position: absolute; left: 6px; bottom: 0; width: 76px; padding: 0; background: none; z-index: 2; pointer-events: none; }
+  #ls-mentor { width: 76px; height: 96px; }
+  .ls-name { display: none; }
+  #ls-stage { padding: 12px 10px; overflow-y: auto; }
+  .lv-scene { gap: 12px; }
+  .big-emoji { font-size: 76px; }
+  .lv-title h3 { font-size: 28px; }
+  .lv-item { font-size: 16px; padding: 4px 12px; }
+  .lv-analogy { gap: 14px; }
+  .lv-code { font-size: 14px; padding: 12px 14px; min-width: 0; max-width: 100%; overflow-x: auto; }
+  .lv-ring { width: 200px; height: 200px; border-width: 10px; }
+  .lv-count b { font-size: 50px; }
+  .lv-box { height: 200px; } .lv-crate { width: 150px; height: 100px; }
+  .lv-paths { gap: 12px; } .lv-paths > div { font-size: 16px; padding: 8px 10px; }
+  .lv-paths code { font-size: 13px; }
+  .lv-cond { font-size: 15px; }
+  .lv-machine { gap: 10px; font-size: 38px; } .lv-mac span { font-size: 15px; } .lv-mac i { font-size: 36px; }
+  .lv-train { flex-wrap: wrap; justify-content: center; } .lv-loco { font-size: 46px; }
+  .lv-wagon { padding: 6px 8px; } .lv-wagon b { font-size: 14px; }
+  .lv-card { min-width: 0; width: 100%; font-size: 16px; padding: 12px 16px; }
+  .lv-kids { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .lv-node { font-size: 14px; padding: 4px 8px; }
+  .lv-recap { padding: 12px 16px; } .lv-recap h4 { font-size: 21px; } .lv-recap code { font-size: 15px; }
+  .lv-ops span { font-size: 12px; }
+  .ls-sub { margin: 0 10px 0 88px; font-size: 15px; padding: 8px 12px; min-height: 64px; border-radius: 14px; }
+  .ls-card footer { padding: 10px 10px max(10px, env(safe-area-inset-bottom)); gap: 8px; }
+  .ls-card footer .btn { min-height: 48px; }
+  #ls-next { flex: 1; }
+
+  /* ---------- loja, códex, conquistas ---------- */
+  .grid-page { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 12px; }
+  .shop-wrap { display: flex; flex-direction: column; min-height: 0; }
+  .shop-preview { position: static; margin: 10px 12px 0; flex-direction: row; gap: 14px; padding: 8px 14px; align-self: stretch; }
+  .bot-preview { width: 92px; height: 92px; --cell: 92px; }
+  .shop-wrap .grid-page { flex: 1; }
+  .shop-item, .codex-item, .ach { padding: 10px; }
+  .shop-item b, .codex-item b, .ach b { font-size: 15px; line-height: 1.15; }
+  .si-ic { height: 60px; font-size: 42px; } .si-ic img { max-height: 60px; max-width: 90px; }
+  .shop-item .btn.small { min-height: 40px; width: 100%; }
+  .cx-ic, .ach-ic { font-size: 38px; }
+  .codex-item small, .ach small { font-size: 13px; }
+
+  /* ---------- modais e avisos ---------- */
+  .modal-card { min-width: 0; width: calc(100vw - 28px); padding: 20px 16px; }
+  .stars { font-size: 54px; margin-top: -56px; } .stars span:nth-child(2) { font-size: 70px; }
+  #m-title { font-size: 28px; }
+  #m-goals { font-size: 15px; }
+  .m-btns .btn { flex: 1; min-height: 48px; }
+  /* avisos compactos (uma linha) para não cobrir o modal de vitória */
+  #toasts { left: 10px; right: 10px; top: max(8px, env(safe-area-inset-top)); gap: 6px; z-index: 95; }
+  .toast { min-width: 0; padding: 4px 12px; border-width: 3px; border-radius: 14px; box-shadow: 0 3px 0 var(--ink); gap: 8px; }
+  .toast .t-ic { font-size: 22px; }
+  .toast small { display: none; }
+  .toast b { display: inline; font-size: 15px; }
+  .toast em { margin-left: 6px; font-size: 14px; }
+  .toast > div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #toasts .toast:nth-last-child(n+3) { display: none; }
+  #modal { align-items: end; padding-bottom: max(16px, env(safe-area-inset-bottom)); }
+  .modal-card { margin-top: 70px; }
+  #chest-img { width: 200px; height: 200px; }
+  .chest-wrap h2 { font-size: 28px; padding: 0 16px; }
+  .auth-card input, .auth-card select { font-size: 16px; min-height: 44px; }
+}
+
+/* telas baixas (celular deitado) */
+@media (max-width: 960px) and (max-height: 500px) and (orientation: landscape) {
+  #game .play { flex-direction: row; }
+  #stage { height: auto; flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

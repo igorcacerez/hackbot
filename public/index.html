@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
 <title>HackBot: aprenda JavaScript jogando, programando um robô (grátis)</title>
 <meta name="description" content="Jogo grátis em português para aprender JavaScript do zero ao DOM: você programa um robô com código de verdade (for, if, funções, arrays, objetos, CSS, HTML e DOM). 25 fases, aulas narradas e arena online." />
 <meta name="keywords" content="aprender javascript, jogo de programação, aprender a programar jogando, curso de javascript grátis, javascript para iniciantes, programação para crianças, lógica de programação, DOM, HTML, CSS" />
@@ -74,6 +74,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/extra.css" />
+<link rel="stylesheet" href="css/mobile.css" />
 </head>
 <body>
 <div id="sky"></div>
@@ -138,6 +139,7 @@
         </div>
       </div>
       <div class="api" id="api"></div>
+      <div class="symbar" id="symbar" aria-label="Símbolos de código"></div>
       <div class="controls">
         <button class="btn run" id="btn-run">▶ RODAR</button>
         <button class="btn small" id="btn-speed" title="Velocidade">1x</button>
@@ -181,6 +183,7 @@
         </div>
       </div>
       <div class="api" id="a-api"></div>
+      <div class="symbar" id="a-symbar" aria-label="Símbolos de código"></div>
       <div class="controls">
         <button class="btn run" id="a-fight">⚔ LUTAR</button>
         <button class="btn small" id="a-speed">1x</button>
@@ -290,6 +293,14 @@
 
 <div id="toasts"></div>
 
+<!-- navegação inferior (só no celular) -->
+<nav id="mnav" aria-label="Navegação">
+  <button data-go="map"><span>🗺️</span>Mapa</button>
+  <button data-go="codex"><span>📚</span>Códex</button>
+  <button data-go="shop"><span>🛒</span>Loja</button>
+  <button data-go="trophies"><span>🏆</span>Conquistas</button>
+</nav>
+
 <script src="js/levels.js"></script>
 <script src="js/lessons.js"></script>
 <script src="js/sim-core.js"></script>
@@ -299,5 +310,6 @@
 <script src="js/lesson-player.js"></script>
 <script src="js/battle-core.js"></script>
 <script src="js/arena.js"></script>
+<script src="js/mobile.js"></script>
 </body>
 </html>
