@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HackBot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/extra.css" />
+</head>
+<body>
+<div id="sky"></div>
+
+<!-- TÍTULO -->
+<section id="title" class="screen active">
+  <div class="title-wrap">
+    <img class="title-robot sprite" data-src="assets/robot.png" data-emoji="🤖" alt="" />
+    <h1 class="logo"><span>HACK</span><span>BOT</span></h1>
+    <p class="tag">A rebelião das máquinas começou.<br/>Seu robô só obedece <b>código</b>.</p>
+    <div id="title-auth"></div>
+  </div>
+  <div class="title-bugs">
+    <img class="sprite tb1" data-src="assets/bug_null.png" data-emoji="👻" alt="" />
+    <img class="sprite tb2" data-src="assets/bug_loop.png" data-emoji="🌀" alt="" />
+    <img class="sprite tb3" data-src="assets/bug_undefined.png" data-emoji="👾" alt="" />
+  </div>
+</section>
+
+<!-- MAPA -->
+<section id="map" class="screen">
+  <header class="bar">
+    <button class="btn small" data-go="title">⟵</button>
+    <h2>Mapa do Curso</h2>
+    <nav class="topnav">
+      <button class="btn small" data-go="codex">📚 Códex</button>
+      <button class="btn small" data-go="shop">🛒 Loja</button>
+      <button class="btn small" data-go="trophies">🏆 Conquistas</button>
+    </nav>
+    <div class="pill coins">🪙 <span class="coin-n">0</span></div>
+    <div class="pill">⭐ <span id="total-stars">0</span></div>
+    <div class="pill user-pill" id="user-pill"></div>
+  </header>
+  <div id="map-scroll"><div id="map-path"></div></div>
+</section>
+
+<!-- JOGO -->
+<section id="game" class="screen">
+  <header class="bar">
+    <button class="btn small" data-go="map">⟵ Mapa</button>
+    <div class="lvl-title"><small id="lvl-world"></small><h2 id="lvl-name"></h2></div>
+    <button class="btn small" id="btn-lesson" title="Rever a aula">🎬 Aula</button>
+    <div class="pill coins">🪙 <span class="coin-n">0</span></div>
+    <div class="pill" id="chip-count">🪙 0/0</div>
+  </header>
+  <main class="play">
+    <div class="stage-wrap">
+      <div id="stage">
+        <div id="world"></div>
+        <div id="fx"></div>
+      </div>
+      <div id="mission" class="card"></div>
+    </div>
+    <aside class="panel">
+      <div class="tabs" id="tabs"></div>
+      <div class="editor">
+        <div class="gutter" id="gutter"></div>
+        <div class="code-area">
+          <pre id="hl" aria-hidden="true"></pre>
+          <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+        </div>
+      </div>
+      <div class="api" id="api"></div>
+      <div class="controls">
+        <button class="btn run" id="btn-run">▶ RODAR</button>
+        <button class="btn small" id="btn-speed" title="Velocidade">1x</button>
+        <button class="btn small" id="btn-hint" title="Dica">💡</button>
+        <button class="btn small" id="btn-reset" title="Resetar código">↺</button>
+        <div class="lines" id="lines"></div>
+      </div>
+      <div id="term"></div>
+    </aside>
+  </main>
+</section>
+
+<!-- ARENA -->
+<section id="arena" class="screen">
+  <header class="bar">
+    <button class="btn small" data-go="map">⟵ Mapa</button>
+    <div class="lvl-title"><small>Modo batalha</small><h2>⚔ Arena</h2></div>
+    <div class="seg" id="a-mode">
+      <button class="on" data-mode="camp">🤖 Rivais</button>
+      <button data-mode="rank">🌐 Ranking Online</button>
+    </div>
+    <div class="pill" id="a-names"></div>
+  </header>
+  <main class="play arena-play">
+    <div class="stage-wrap">
+      <div id="a-stage">
+        <div id="a-world"></div>
+        <div id="a-fx"></div>
+        <div id="a-result"></div>
+      </div>
+      <div class="rivals" id="rivals"></div>
+      <div class="ranking hidden" id="ranking"></div>
+    </div>
+    <aside class="panel">
+      <div class="tabs"><button class="tab on">ia.js</button></div>
+      <div class="editor">
+        <div class="gutter" id="a-gutter"></div>
+        <div class="code-area">
+          <pre id="a-hl" aria-hidden="true"></pre>
+          <textarea id="a-code" spellcheck="false" autocapitalize="off" autocomplete="off"></textarea>
+        </div>
+      </div>
+      <div class="api" id="a-api"></div>
+      <div class="controls">
+        <button class="btn run" id="a-fight">⚔ LUTAR</button>
+        <button class="btn small" id="a-speed">1x</button>
+        <button class="btn small" id="a-peek" title="Ver código do rival">👁</button>
+        <button class="btn small" id="a-share" title="Copiar código de batalha">📋</button>
+        <button class="btn small" id="a-reset" title="Resetar">↺</button>
+      </div>
+      <div id="a-term"></div>
+    </aside>
+  </main>
+</section>
+
+<!-- CÓDEX (aulas) -->
+<section id="codex" class="screen">
+  <header class="bar">
+    <button class="btn small" data-go="map">⟵ Mapa</button>
+    <h2>📚 Códex: suas aulas</h2>
+    <div class="pill">Reveja quando quiser!</div>
+  </header>
+  <div class="grid-page" id="codex-list"></div>
+</section>
+
+<!-- LOJA -->
+<section id="shop" class="screen">
+  <header class="bar">
+    <button class="btn small" data-go="map">⟵ Mapa</button>
+    <h2>🛒 Loja de Peças</h2>
+    <div class="pill coins">🪙 <span class="coin-n">0</span></div>
+  </header>
+  <div class="shop-wrap">
+    <div class="shop-preview card">
+      <div id="shop-bot" class="bot-preview"></div>
+      <small>Seu robô</small>
+    </div>
+    <div class="grid-page" id="shop-list"></div>
+  </div>
+</section>
+
+<!-- CONQUISTAS -->
+<section id="trophies" class="screen">
+  <header class="bar">
+    <button class="btn small" data-go="map">⟵ Mapa</button>
+    <h2>🏆 Conquistas</h2>
+    <div class="pill" id="ach-count"></div>
+  </header>
+  <div class="grid-page" id="ach-list"></div>
+</section>
+
+<!-- AULA -->
+<div id="lesson" class="hidden">
+  <div class="ls-card">
+    <header><h3 id="ls-title"></h3><div class="ls-dots" id="ls-dots"></div><button class="btn small" id="ls-mute">🔊</button><button class="btn small" id="ls-skip">✕</button></header>
+    <div class="ls-body">
+      <div class="ls-mentor-wrap">
+        <img id="ls-mentor" src="assets/mentor.png" alt="Profa. Byte" onerror="this.src='assets/robot.png'" />
+        <div class="ls-name">Profa. Byte</div>
+      </div>
+      <div id="ls-stage"></div>
+    </div>
+    <div class="ls-sub" id="ls-sub"></div>
+    <footer>
+      <button class="btn small" id="ls-prev">⏮</button>
+      <button class="btn small" id="ls-replay">↻ Repetir</button>
+      <button class="btn" id="ls-next">Próximo ⏭</button>
+    </footer>
+  </div>
+</div>
+
+<!-- LOGIN / CADASTRO -->
+<div id="auth" class="hidden">
+  <form class="card auth-card" id="auth-form">
+    <div class="seg" id="auth-mode"><button type="button" class="on" data-m="login">Entrar</button><button type="button" data-m="cadastro">Criar conta</button></div>
+    <label>Usuário <input name="usuario" autocomplete="username" required minlength="3" maxlength="20" pattern="[a-zA-Z0-9_.\-]+" /></label>
+    <label>Senha <input name="senha" type="password" autocomplete="current-password" required minlength="6" /></label>
+    <label class="only-cad">Curso
+      <select name="curso"><option value="js-do-zero-ao-dom">JavaScript: do zero ao DOM</option></select>
+    </label>
+    <div class="auth-err" id="auth-err"></div>
+    <div class="m-btns"><button type="button" class="btn small" id="auth-cancel">Cancelar</button><button class="btn" id="auth-go">Entrar ▶</button></div>
+  </form>
+</div>
+
+<!-- MODAL VITÓRIA -->
+<div id="modal" class="hidden">
+  <div class="modal-card card">
+    <div class="stars" id="m-stars"><span>★</span><span>★</span><span>★</span></div>
+    <h2 id="m-title"></h2>
+    <ul id="m-goals"></ul>
+    <div id="m-reward"></div>
+    <div id="m-loot"></div>
+    <div class="m-btns">
+      <button class="btn small" id="m-retry">↺ Melhorar</button>
+      <button class="btn" id="m-next">Próxima ▶</button>
+    </div>
+  </div>
+</div>
+
+<!-- BAÚ -->
+<div id="chest" class="hidden">
+  <div class="chest-wrap">
+    <h2 id="chest-title">Módulo completo!</h2>
+    <img id="chest-img" src="assets/chest.png" alt="" onerror="this.outerHTML='<div id=chest-img class=emoji-chest>🎁</div>'" />
+    <div id="chest-prize"></div>
+    <button class="btn big" id="chest-btn">ABRIR!</button>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<script src="js/levels.js"></script>
+<script src="js/lessons.js"></script>
+<script src="js/sim-core.js"></script>
+<script src="js/sim.js"></script>
+<script src="js/rewards.js"></script>
+<script src="js/game.js"></script>
+<script src="js/lesson-player.js"></script>
+<script src="js/battle-core.js"></script>
+<script src="js/arena.js"></script>
+</body>
+</html>

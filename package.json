@@ -1,0 +1,21 @@
+{
+  "name": "hackbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.mjs",
+    "narrar": "node scripts/narrar.mjs",
+    "test": "node tests/levels.test.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "quickjs-emscripten": "^0.31.0"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}
