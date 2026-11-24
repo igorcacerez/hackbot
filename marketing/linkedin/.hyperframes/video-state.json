@@ -1,0 +1,602 @@
+{
+  "version": 1,
+  "historyId": "395ab1b7-b899-4daa-9663-545fd9a89127",
+  "currentRevision": "f7ed92da-a328-4fee-8748-888678583dd3",
+  "pendingChanges": false,
+  "files": {
+    "assets/bug_null.png": {
+      "hash": "44c3e56e7ce9f4be9688c6209b7758dda141a870fdea44ec8c9f1c478bf138e9",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\44\\44c3e56e7ce9f4be9688c6209b7758dda141a870fdea44ec8c9f1c478bf138e9"
+    },
+    "assets/chip.png": {
+      "hash": "3b3593eb8435898c51df781334d68f4d48950e4f53380c59f2c8bf566c94372c",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\3b\\3b3593eb8435898c51df781334d68f4d48950e4f53380c59f2c8bf566c94372c"
+    },
+    "assets/coin.png": {
+      "hash": "af9baa7192c9c5e06449b7c04c343308d9c1a17c344c00fa63555bcc9edbf8b6",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\af\\af9baa7192c9c5e06449b7c04c343308d9c1a17c344c00fa63555bcc9edbf8b6"
+    },
+    "assets/mentor.png": {
+      "hash": "c2eb815eaa19b727d2a012c48b2b29886bd19a93f2e812847310c4d2103c0268",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\c2\\c2eb815eaa19b727d2a012c48b2b29886bd19a93f2e812847310c4d2103c0268"
+    },
+    "assets/robot.png": {
+      "hash": "d67fa222150a17f88d4d81293599f2218388e846c9a39b2aa6645816e9c3a160",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\d6\\d67fa222150a17f88d4d81293599f2218388e846c9a39b2aa6645816e9c3a160"
+    },
+    "assets/shop.mp4": {
+      "hash": "39922a18af817b66a2a9ed40205d270a148a8652f1ca012877ae531e73f80200",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\39\\39922a18af817b66a2a9ed40205d270a148a8652f1ca012877ae531e73f80200"
+    },
+    "assets/win.mp4": {
+      "hash": "72bedf986e8743889adf2f41d9358ec134ea8783d9432f07749a029d0bbd9be2",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\72\\72bedf986e8743889adf2f41d9358ec134ea8783d9432f07749a029d0bbd9be2"
+    },
+    "hyperframes.json": {
+      "hash": "53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\53\\53dbce1e19aa713cbb12ee0bc4d206143b45ab15e6ffbfcaa8f69572d4d24d50"
+    },
+    "index.html": {
+      "hash": "0bff5a73a58a8ec69b37e5cf03c84378274f880791b0728b9a4feda065a30b8e",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\0b\\0bff5a73a58a8ec69b37e5cf03c84378274f880791b0728b9a4feda065a30b8e"
+    },
+    "package.json": {
+      "hash": "6dbf0e3ace4ea4b91493b21adb68108a97f19993a3dac921c69f6fc64a95394c",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\6d\\6dbf0e3ace4ea4b91493b21adb68108a97f19993a3dac921c69f6fc64a95394c"
+    },
+    "assets/bug_loop.png": {
+      "hash": "acb95a2f7ad9b274e76dd041ed27aaa2f88937ac76bb289e15a17f097567c074",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\ac\\acb95a2f7ad9b274e76dd041ed27aaa2f88937ac76bb289e15a17f097567c074"
+    },
+    "assets/home.mp4": {
+      "hash": "1251b3929ef63381816b0b782218c38df363277b92d85e2da7b9f439c6e64a35",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\12\\1251b3929ef63381816b0b782218c38df363277b92d85e2da7b9f439c6e64a35"
+    },
+    "assets/lesson.mp4": {
+      "hash": "60c1d0391fc7108cb89b7cb40f2f8735e349df56aa4262e669ba0279ba14a9e2",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\60\\60c1d0391fc7108cb89b7cb40f2f8735e349df56aa4262e669ba0279ba14a9e2"
+    },
+    "assets/map.mp4": {
+      "hash": "33e3ac8ce13d308eb93866bfb4a839cb8a0d54eb08ecb7ea1e62985a8f9393c0",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\33\\33e3ac8ce13d308eb93866bfb4a839cb8a0d54eb08ecb7ea1e62985a8f9393c0"
+    },
+    "assets/run.mp4": {
+      "hash": "cfe786086b759dfa7925422133b6c46e7ed07b3a3e7ad65621c8a289558fe73a",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\cf\\cfe786086b759dfa7925422133b6c46e7ed07b3a3e7ad65621c8a289558fe73a"
+    },
+    "assets/type.mp4": {
+      "hash": "f9b4eb644a5c07ff8a25585de75132893ed12dfbd347b2ea783ea582f3ee1fdb",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\f9\\f9b4eb644a5c07ff8a25585de75132893ed12dfbd347b2ea783ea582f3ee1fdb"
+    },
+    "assets/vo-raw.mp3": {
+      "hash": "c57ee3a689106ffb2d47d922b3abd8ff77177f9762e049c42f84bb9902ce40e7",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\c5\\c57ee3a689106ffb2d47d922b3abd8ff77177f9762e049c42f84bb9902ce40e7"
+    },
+    "assets/vo.wav": {
+      "hash": "f11741cf5437c980452e5eee9efefa1885b8dfba31410740c27b313a6bfce6b1",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\f1\\f11741cf5437c980452e5eee9efefa1885b8dfba31410740c27b313a6bfce6b1"
+    },
+    "assets/music60.wav": {
+      "hash": "1a6f5d7136626ff2db847e1ef1b6d12a3b3f2d854578288b80d9867e41b3e619",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\1a\\1a6f5d7136626ff2db847e1ef1b6d12a3b3f2d854578288b80d9867e41b3e619"
+    },
+    "post-linkedin.md": {
+      "hash": "8c753ca6a0f0f06459d6c51917b770cbe4c64b2eec80c193efcef6deaaa17247",
+      "content": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\8c\\8c753ca6a0f0f06459d6c51917b770cbe4c64b2eec80c193efcef6deaaa17247"
+    }
+  },
+  "revisions": {
+    "3dd00920-eb53-48bf-bd78-60c00c8b62c0": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795483870691,
+      "endedAt": 1795483870705,
+      "files": {
+        "assets/music55.wav": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\f4\\f420ad795ce7ae05922811e6fcb4f6c27aae83da04358aa442834af83958c832",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\e7\\e7b9f082c1264369767617dbd92572403ea41616f8c80bb9f1f9e8b241e53ef5"
+        },
+        "index.html": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\8b\\8bf18233e4f864f3a2c43ce1dc566a675c41cf6db056b8c732710b61b103634c",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\36\\36289ca30977d3d8bb24022a59878bf992fdc074797117b3476dcaf43598ac1f"
+        }
+      }
+    },
+    "ab249111-553b-4af6-922e-791d17e59433": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795483965770,
+      "endedAt": 1795483965827,
+      "files": {
+        "assets/home.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\00\\005089368576a67a4df1cee6a5f17c5d073c3cf9e58fece17dbf3da968323c28",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\12\\1251b3929ef63381816b0b782218c38df363277b92d85e2da7b9f439c6e64a35"
+        },
+        "assets/lesson.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\63\\63e176a3f0233e8a4e206d507c165a45c4e73121c2afb0495233176ede835d55",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\60\\60c1d0391fc7108cb89b7cb40f2f8735e349df56aa4262e669ba0279ba14a9e2"
+        },
+        "assets/map.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\49\\49aebed2c880e321efc53565093ebfdf28e8e68e82afb33b39e0114043d44686",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\46\\466c66b9eedd8ad4abe6500c736ad67427be7c636dfa9126775606523c4cac4c"
+        },
+        "assets/run.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\3f\\3f6a2fc5b5674d914a8ed5ba881b6af4ddd569f219b755179e231c2121be6162",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\cf\\cfe786086b759dfa7925422133b6c46e7ed07b3a3e7ad65621c8a289558fe73a"
+        },
+        "assets/shop.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\05\\05d9123ef21602add4feef7ee034aed08425ee7f15bf5890c6da105f30d8802b",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\39\\39922a18af817b66a2a9ed40205d270a148a8652f1ca012877ae531e73f80200"
+        },
+        "assets/type.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\02\\023be75d2be0516ca7f6a2bca8f90d5dd9058f020b28137a9cb9a1261db3ed82",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\f9\\f9b4eb644a5c07ff8a25585de75132893ed12dfbd347b2ea783ea582f3ee1fdb"
+        },
+        "assets/win.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\88\\88b9ef92757bdd925ac84fd97407e66965b017f2e68ad7c53696bd6f65f08680",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\72\\72bedf986e8743889adf2f41d9358ec134ea8783d9432f07749a029d0bbd9be2"
+        }
+      }
+    },
+    "f7ed92da-a328-4fee-8748-888678583dd3": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795485109267,
+      "endedAt": 1795485109331,
+      "files": {
+        "assets/map.mp4": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\46\\466c66b9eedd8ad4abe6500c736ad67427be7c636dfa9126775606523c4cac4c",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\33\\33e3ac8ce13d308eb93866bfb4a839cb8a0d54eb08ecb7ea1e62985a8f9393c0"
+        },
+        "assets/music55.wav": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\e7\\e7b9f082c1264369767617dbd92572403ea41616f8c80bb9f1f9e8b241e53ef5",
+          "after": null
+        },
+        "assets/music60.wav": {
+          "before": null,
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\1a\\1a6f5d7136626ff2db847e1ef1b6d12a3b3f2d854578288b80d9867e41b3e619"
+        },
+        "assets/vo-raw.mp3": {
+          "before": null,
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\c5\\c57ee3a689106ffb2d47d922b3abd8ff77177f9762e049c42f84bb9902ce40e7"
+        },
+        "assets/vo.wav": {
+          "before": null,
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\f1\\f11741cf5437c980452e5eee9efefa1885b8dfba31410740c27b313a6bfce6b1"
+        },
+        "index.html": {
+          "before": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\36\\36289ca30977d3d8bb24022a59878bf992fdc074797117b3476dcaf43598ac1f",
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\0b\\0bff5a73a58a8ec69b37e5cf03c84378274f880791b0728b9a4feda065a30b8e"
+        },
+        "post-linkedin.md": {
+          "before": null,
+          "after": "C:\\Users\\Igor\\.cache\\hyperframes\\history\\395ab1b7-b899-4daa-9663-545fd9a89127\\blobs\\8c\\8c753ca6a0f0f06459d6c51917b770cbe4c64b2eec80c193efcef6deaaa17247"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": {
+      "revision": "f7ed92da-a328-4fee-8748-888678583dd3",
+      "id": "ae4b1d6b-94ad-47a1-8f90-70cc5f36e980"
+    },
+    "revisions": {
+      "f7ed92da-a328-4fee-8748-888678583dd3": [
+        {
+          "id": "ae4b1d6b-94ad-47a1-8f90-70cc5f36e980",
+          "scope": "project",
+          "report": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\checks\\ae4b1d6b-94ad-47a1-8f90-70cc5f36e980.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795485147693,
+          "contentHash": "65360f19fb7eac7dcba493b683375691797d0ebffbbd96981f4d4c83a0361e1d",
+          "revision": "f7ed92da-a328-4fee-8748-888678583dd3",
+          "inputFingerprint": "338d072669d924827d60c1124cc73e73006693f552ba0385a62406ee1855b2f3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": [
+      {
+        "id": "3054dabc-d03b-4d6e-9a0c-d50a01ea6127",
+        "scope": "project",
+        "report": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\checks\\3054dabc-d03b-4d6e-9a0c-d50a01ea6127.json",
+        "metadata": {
+          "ok": true,
+          "browserSkipped": false,
+          "options": {
+            "samples": 9,
+            "atTransitions": false,
+            "maxIssues": 80,
+            "collapseStatic": true,
+            "tolerance": 2,
+            "timeout": 45000,
+            "cache": true,
+            "contrast": true,
+            "craft": true,
+            "strict": false,
+            "snapshots": false,
+            "safeZones": [
+              "tiktok",
+              "reels",
+              "shorts"
+            ],
+            "browserGpuMode": "auto",
+            "includeUnmounted": false
+          }
+        },
+        "createdAt": 1795483851506,
+        "contentHash": "7337957ea45592eedc58622e6a56b74cd96f88f32570fe977ea16b1105bd5af2",
+        "revision": null,
+        "inputFingerprint": "4226ca85c3016b21f303bdef4fbe1c82e4d98cc332eb18bf9a5d0a294287cc1a",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  },
+  "snapshots": {
+    "latest": {
+      "revision": "ab249111-553b-4af6-922e-791d17e59433",
+      "id": "43feabb9-b7d2-4817-8974-c2e2b1a41859-4"
+    },
+    "revisions": {
+      "3dd00920-eb53-48bf-bd78-60c00c8b62c0": [
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-0",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-00-at-2s.png",
+          "time": 2,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910788,
+          "contentHash": "b449ed8331e19fc69aa383d5b23cfe117cceb5cee26f165c7ed98f74fc4d2839",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-1",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-01-at-6s.png",
+          "time": 6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910788,
+          "contentHash": "41b4fa17d5a26640e13ffb118cdbc015a935f84d37289c62bf4dfa63ae5c1daf",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-2",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-02-at-10s.png",
+          "time": 10,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910788,
+          "contentHash": "76ce07b3f972a13bd789bb17f70c84c606eac7d52ab4db7784704d5e8c9f2a11",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-3",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-03-at-16s.png",
+          "time": 16,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910789,
+          "contentHash": "cacca70656b594ab5f5db33c6082de01c863bf432e8e935c9d40a5bb0ed881e6",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-4",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-04-at-25s.png",
+          "time": 25,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910790,
+          "contentHash": "4f45cbdf668536081caa3e67e0a6a7e8e048b83d6cec7618120f8dd076ef30cb",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-5",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-05-at-34s.png",
+          "time": 34,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910790,
+          "contentHash": "7f768058414ce9b93ab7da13d226796a0aa092ac39294a2ffda295e8a64d50f3",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-6",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-06-at-41s.png",
+          "time": 41,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910791,
+          "contentHash": "5b8c0136e7efd4f17ee739949bbb22b7571c4d127a1deedd54d98d3b4a1c3381",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-7",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-07-at-44s.png",
+          "time": 44,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910792,
+          "contentHash": "e1eb41d3925a8de3aacc704e2cf5bbe32139f88f3963557102b9a93ff88ab0d9",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-8",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-08-at-48s.png",
+          "time": 48,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910793,
+          "contentHash": "3543f81511931ba0e50c9e42daa1e8c7d60b54535aa86c9c8ae2a640f76c1549",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-9",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-09-at-53s.png",
+          "time": 53,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910794,
+          "contentHash": "47f017564b8f33ab1e72dc3a142805c3ab9d2f8f51c5173aacf6f4aef5fc8803",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "7ba5ad26-eab2-4a31-8277-21ac6ed2a376-10",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\2a69ca41-9bba-4a8e-a02c-3b7f898c8656\\frame-10-at-54.75s.png",
+          "time": 54.75,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483910795,
+          "contentHash": "f50db5d1cbb9b4cebe844fff28438bb58efafc281909b7fe7691330942b282ca",
+          "revision": "3dd00920-eb53-48bf-bd78-60c00c8b62c0",
+          "inputFingerprint": "2910f584abd8a2516f43e21a782b5ab763ae9861a61645f05aec22c34818e8d3",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "ab249111-553b-4af6-922e-791d17e59433": [
+        {
+          "scope": "full",
+          "id": "43feabb9-b7d2-4817-8974-c2e2b1a41859-0",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\431b98f3-d8af-4222-b80d-c97f78a231db\\frame-00-at-6s.png",
+          "time": 6,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483989711,
+          "contentHash": "b98691984d1eb64b94ca628852a2061060b6d90567042cfa3b77d67c86f6303d",
+          "revision": "ab249111-553b-4af6-922e-791d17e59433",
+          "inputFingerprint": "acfa6e82ee6c0e9123df549816450a051fad2da2a37ef9c0bdbb2b6cafa6c09d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "43feabb9-b7d2-4817-8974-c2e2b1a41859-1",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\431b98f3-d8af-4222-b80d-c97f78a231db\\frame-01-at-25s.png",
+          "time": 25,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483989715,
+          "contentHash": "5741b8d8cff3d87e922025d6d2df1b25fe129ffd4fdd8ef6b95c15c0bb48b7c2",
+          "revision": "ab249111-553b-4af6-922e-791d17e59433",
+          "inputFingerprint": "acfa6e82ee6c0e9123df549816450a051fad2da2a37ef9c0bdbb2b6cafa6c09d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "43feabb9-b7d2-4817-8974-c2e2b1a41859-2",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\431b98f3-d8af-4222-b80d-c97f78a231db\\frame-02-at-36s.png",
+          "time": 36,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483989718,
+          "contentHash": "4679f55c3c5aabc59e360a32f9f325a75063971c8596bb624744e677844b417b",
+          "revision": "ab249111-553b-4af6-922e-791d17e59433",
+          "inputFingerprint": "acfa6e82ee6c0e9123df549816450a051fad2da2a37ef9c0bdbb2b6cafa6c09d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "43feabb9-b7d2-4817-8974-c2e2b1a41859-3",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\431b98f3-d8af-4222-b80d-c97f78a231db\\frame-03-at-41s.png",
+          "time": 41,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483989721,
+          "contentHash": "534b81e91b689f6b7367f4dc815e43a16348e28476bde698e0a1dc1415afced6",
+          "revision": "ab249111-553b-4af6-922e-791d17e59433",
+          "inputFingerprint": "acfa6e82ee6c0e9123df549816450a051fad2da2a37ef9c0bdbb2b6cafa6c09d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "43feabb9-b7d2-4817-8974-c2e2b1a41859-4",
+          "image": "C:\\Users\\Igor\\Desktop\\projetos\\robo-dev\\marketing\\linkedin\\.hyperframes\\artifacts\\snapshots\\431b98f3-d8af-4222-b80d-c97f78a231db\\frame-04-at-54.75s.png",
+          "time": 54.75,
+          "metadata": {
+            "width": 1920,
+            "height": 1080,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795483989726,
+          "contentHash": "f50db5d1cbb9b4cebe844fff28438bb58efafc281909b7fe7691330942b282ca",
+          "revision": "ab249111-553b-4af6-922e-791d17e59433",
+          "inputFingerprint": "acfa6e82ee6c0e9123df549816450a051fad2da2a37ef9c0bdbb2b6cafa6c09d",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ]
+    },
+    "unversioned": []
+  }
+}

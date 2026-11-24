@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="UTF-8"/><meta name="viewport" content="width=1080, height=1920"/>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<style>
+:root{--bg:#0a0618;--g:#00ffa3;--p:#ff2e88;--y:#ffd23f;--c:#2ee6ff;--ink:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+#root{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'Archivo Black',sans-serif;color:var(--ink)}
+.abs{position:absolute}
+.full{position:absolute;inset:0}
+.center{display:flex;flex-direction:column;align-items:center;justify-content:center}
+#glow{background:radial-gradient(900px 900px at 50% 38%,rgba(124,58,237,.55),transparent 70%),radial-gradient(700px 700px at 85% 90%,rgba(255,46,136,.35),transparent 70%),radial-gradient(600px 600px at 0% 10%,rgba(46,230,255,.25),transparent 70%)}
+#gridwrap{left:-540px;right:-540px;top:1050px;height:1400px;perspective:600px}
+#grid{position:absolute;inset:0;opacity:.45;-webkit-mask-image:linear-gradient(transparent,#000 30%);background-image:linear-gradient(rgba(0,255,163,.45) 2px,transparent 2px),linear-gradient(90deg,rgba(0,255,163,.45) 2px,transparent 2px);background-size:120px 120px;transform-origin:50% 0}
+#gridfade{left:0;right:0;top:1000px;height:500px;background:linear-gradient(var(--bg),transparent)}
+#scan{background:repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 2px,transparent 2px 5px);pointer-events:none;z-index:50}
+#vig{background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.6));z-index:49}
+.flash{background:#fff;opacity:0;z-index:60}
+.t{text-align:center;line-height:.95;text-transform:uppercase;letter-spacing:-.02em}
+.big{font-size:140px}.mid{font-size:104px}.sm{font-size:64px}
+.g{color:var(--g)}.p{color:var(--p)}.y{color:var(--y)}.c{color:var(--c)}
+.stroke{-webkit-text-stroke:4px var(--ink);color:transparent}
+.shadow{text-shadow:0 0 30px rgba(0,255,163,.6),8px 8px 0 #7c3aed}
+.robot{image-rendering:auto;filter:drop-shadow(0 0 40px rgba(0,255,163,.6))}
+.code{font-family:'JetBrains Mono',monospace;font-size:46px;background:rgba(10,6,30,.92);border:4px solid var(--g);border-radius:28px;padding:36px 40px;box-shadow:0 0 60px rgba(0,255,163,.35),14px 14px 0 #7c3aed;text-align:left;line-height:1.5;white-space:pre}
+.code .k{color:var(--p)}.code .f{color:var(--c)}.code .n{color:var(--y)}.code .cm{color:#7d7aa8}
+.bar{height:16px;border-radius:8px;background:rgba(255,255,255,.12);overflow:hidden}
+.bar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--g),var(--c),var(--p));transform-origin:0 50%}
+.chip{font-family:'JetBrains Mono',monospace;font-size:72px;padding:18px 44px;border-radius:999px;border:5px solid currentColor;background:rgba(10,6,30,.85);box-shadow:0 0 40px currentColor}
+.pill{background:var(--y);color:#120a2a;padding:14px 40px;border-radius:999px;font-size:54px}
+.cap{left:60px;right:60px;top:1170px;display:flex;flex-wrap:wrap;justify-content:center;gap:0 22px;z-index:40}
+.cap span{font-size:62px;text-transform:uppercase;color:#fff;-webkit-text-stroke:2px #000;paint-order:stroke;text-shadow:0 6px 0 #000,0 0 18px rgba(0,0,0,.8);display:inline-block}
+.stamp{border:12px solid var(--p);color:var(--p);padding:10px 50px;border-radius:24px;font-size:170px;text-shadow:0 0 40px rgba(255,46,136,.7);box-shadow:0 0 50px rgba(255,46,136,.6),inset 0 0 30px rgba(255,46,136,.5)}
+.url{font-family:'JetBrains Mono',monospace;font-size:40px;color:var(--g);background:rgba(0,0,0,.55);padding:16px 30px;border-radius:16px;border:3px solid var(--g)}
+</style></head><body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="18.6" data-width="1080" data-height="1920">
+<div id="glow" class="full"></div>
+<div id="gridwrap" class="abs"><div id="grid"></div></div>
+
+<div id="stage" class="full" style="transform:scale(.86);transform-origin:50% 30%">
+<div id="s1" class="full clip" data-start="0" data-duration="2.95" data-track-index="1">
+  <div id="s1top" class="abs t sm c" style="top:330px;left:0;right:0">E se aprender</div>
+  <div id="s1prog" class="abs t big g shadow" style="top:420px;left:0;right:0;font-size:112px">PROGRAMAÇÃO</div>
+  <div id="s1jogo" class="abs t mid" style="top:580px;left:0;right:0">fosse um <span class="y">jogo?</span></div>
+  <img id="s1robot" class="abs robot" src="assets/robot.png" style="left:290px;top:720px;width:500px"/>
+  <div id="s1q" class="abs t big p" style="left:760px;top:680px;font-size:220px">?</div>
+</div>
+<div id="s2" class="full clip" data-start="2.95" data-duration="2.7" data-track-index="1">
+  <div id="s2logo" class="abs t" style="top:380px;left:0;right:0;font-size:190px"><span class="g">HACK</span>BOT</div>
+  <div id="s2quiz" data-layout-allow-overlap class="abs center" style="left:190px;top:700px;width:700px;height:340px;border:5px dashed #7d7aa8;border-radius:30px;background:rgba(255,255,255,.05)">
+    <div class="t sm" style="color:#7d7aa8">QUIZ CHATO</div>
+    <div class="t" style="font-family:'JetBrains Mono';font-size:40px;color:#7d7aa8;margin-top:104px">A) ___ B) ___ C) ___</div>
+  </div>
+  <div id="s2x" class="abs t p" style="left:0;right:0;top:640px;font-size:460px;line-height:1">✕</div>
+</div>
+<div id="s3" class="full clip" data-start="5.65" data-duration="1.9" data-track-index="1">
+  <div id="s3t" class="abs t mid" style="top:330px;left:0;right:0">Você <span class="g">programa</span><br/>um robô</div>
+  <div id="s3tiles" class="abs" style="left:110px;top:900px;width:860px;height:180px;display:flex;gap:16px">
+    <div style="flex:1;border:4px solid var(--g);border-radius:18px;background:rgba(0,255,163,.12)"></div><div style="flex:1;border:4px solid var(--g);border-radius:18px;background:rgba(0,255,163,.12)"></div><div style="flex:1;border:4px solid var(--g);border-radius:18px;background:rgba(0,255,163,.12)"></div><div style="flex:1;border:4px solid var(--y);border-radius:18px;background:rgba(255,210,63,.25)"></div>
+  </div>
+  <img id="s3robot" class="abs robot" src="assets/robot.png" style="left:110px;top:700px;width:220px"/>
+  <img id="s3portal" class="abs" src="assets/portal.png" style="left:770px;top:720px;width:200px"/>
+</div>
+<div id="s4" class="full clip" data-start="7.55" data-duration="2.15" data-track-index="1">
+  <div id="s4t" class="abs t mid" style="top:310px;left:0;right:0"><span class="y">JavaScript</span><br/>de verdade</div>
+  <div id="s4code" class="abs code" style="left:90px;top:580px;width:900px"><span id="s4l1"><span class="k">for</span> (<span class="k">let</span> i = <span class="n">0</span>; i &lt; <span class="n">3</span>; i++) {</span>
+<span id="s4l2">  robo.<span class="f">andar</span>();</span>
+<span id="s4l3">  robo.<span class="f">pular</span>();</span>
+<span id="s4l4">}</span>
+<span id="s4l5" class="cm">// ✔ fase concluída ★★★</span></div>
+</div>
+<div id="s5" class="full clip" data-start="9.7" data-duration="3.0" data-track-index="1">
+  <img id="s5b1" class="abs" src="assets/bug_null.png" style="left:80px;top:380px;width:260px"/>
+  <img id="s5b2" class="abs" src="assets/bug_loop.png" style="left:410px;top:310px;width:260px"/>
+  <img id="s5b3" class="abs" src="assets/bug_undefined.png" style="left:740px;top:380px;width:260px"/>
+  <div id="s5laser" class="abs" style="left:0;right:0;top:500px;height:26px;background:linear-gradient(90deg,transparent,var(--p),#fff,var(--p),transparent);box-shadow:0 0 40px var(--p)"></div>
+  <div id="s5rank" class="abs" style="left:170px;top:720px;width:740px">
+    <div class="t sm y" style="text-align:left;margin-bottom:20px">🏆 RANKING</div>
+    <div id="s5r1" style="display:flex;justify-content:space-between;font-size:52px;padding:14px 26px;border-radius:16px;background:rgba(0,255,163,.2);border:4px solid var(--g);margin-bottom:12px"><span>#1 VOCÊ</span><span class="g">1840</span></div>
+    <div id="s5r2" style="display:flex;justify-content:space-between;font-size:44px;padding:12px 26px;color:#9a97c4"><span>#2 bot_ana</span><span>1710</span></div>
+    <div id="s5r3" style="display:flex;justify-content:space-between;font-size:44px;padding:12px 26px;color:#9a97c4"><span>#3 robozin</span><span>1655</span></div>
+  </div>
+</div>
+<div id="s6" class="full clip" data-start="12.7" data-duration="2.2" data-track-index="1">
+  <div id="s6t" class="abs t mid" style="top:330px;left:0;right:0">do <span class="c">1º comando</span><br/>até o <span class="p">DOM</span></div>
+  <div id="s6path" class="abs" style="left:90px;top:720px;width:900px;display:flex;flex-direction:column;gap:22px;font-family:'JetBrains Mono';font-size:48px">
+    <div id="s6a">▸ robo.andar()</div><div id="s6b">▸ for / while / if</div><div id="s6c">▸ funções &amp; arrays</div><div id="s6d" class="p">▸ document.querySelector</div>
+  </div>
+  <div class="abs bar" style="left:90px;top:1100px;width:900px"><i id="s6bar"></i></div>
+  <div id="s6n" class="abs t sm y" style="left:0;right:0;top:1140px">25 FASES · 8 MÓDULOS</div>
+</div>
+<div id="s7" class="full clip" data-start="14.9" data-duration="3.7" data-track-index="1">
+  <div id="s7stamp" class="abs center" style="left:0;right:0;top:330px"><div class="t stamp">GRÁTIS</div></div>
+  <img id="s7robot" class="abs robot" src="assets/robot.png" style="left:340px;top:600px;width:400px"/>
+  <img id="s7crown" class="abs" src="assets/hat_crown.png" style="left:450px;top:510px;width:180px"/>
+  <div id="s7cta" class="abs t mid g shadow" style="left:0;right:0;top:1040px">JOGA AGORA ▶</div>
+  <div id="s7url" class="abs center" style="left:0;right:0;top:1170px"><div class="url">roboscript.igorcacerez.com.br</div></div>
+</div>
+<div id="fl1" class="full flash clip" data-start="2.9" data-duration="0.4" data-track-index="8"></div>
+<div id="fl2" class="full flash clip" data-start="14.85" data-duration="0.4" data-track-index="8"></div>
+</div>
+<div id="acap0" class="abs cap clip" data-start="0.00" data-duration="2.62" data-track-index="9"><span id="aw0_0">E</span><span id="aw0_1">se</span><span id="aw0_2">aprender</span><span id="aw0_3">programação</span><span id="aw0_4">fosse</span><span id="aw0_5">um</span><span id="aw0_6">jogo?</span></div><div id="acap1" class="abs cap clip" data-start="2.62" data-duration="2.76" data-track-index="9"><span id="aw1_0">No</span><span id="aw1_1">HackBot,</span><span id="aw1_2">você</span><span id="aw1_3">não</span><span id="aw1_4">responde</span><span id="aw1_5">perguntas.</span></div><div id="acap2" class="abs cap clip" data-start="5.38" data-duration="1.88" data-track-index="9"><span id="aw2_0">Você</span><span id="aw2_1">programa</span><span id="aw2_2">um</span><span id="aw2_3">robô!</span></div><div id="acap3" class="abs cap clip" data-start="7.26" data-duration="2.16" data-track-index="9"><span id="aw3_0">Escreva</span><span id="aw3_1">JavaScript</span><span id="aw3_2">de</span><span id="aw3_3">verdade,</span></div><div id="acap4" class="abs cap clip" data-start="9.42" data-duration="1.80" data-track-index="9"><span id="aw4_0">derrote</span><span id="aw4_1">bugs</span><span id="aw4_2">e</span><span id="aw4_3">suba</span><span id="aw4_4">no</span><span id="aw4_5">ranking</span></div><div id="acap5" class="abs cap clip" data-start="11.22" data-duration="1.20" data-track-index="9"><span id="aw5_0">da</span><span id="aw5_1">arena</span><span id="aw5_2">online.</span></div><div id="acap6" class="abs cap clip" data-start="12.42" data-duration="2.24" data-track-index="9"><span id="aw6_0">Do</span><span id="aw6_1">primeiro</span><span id="aw6_2">comando</span><span id="aw6_3">até</span><span id="aw6_4">o</span><span id="aw6_5">DOM.</span></div><div id="acap7" class="abs cap clip" data-start="14.66" data-duration="1.18" data-track-index="9"><span id="aw7_0">E</span><span id="aw7_1">é</span><span id="aw7_2">grátis!</span></div><div id="acap8" class="abs cap clip" data-start="15.84" data-duration="2.76" data-track-index="9"><span id="aw8_0">Joga</span><span id="aw8_1">agora!</span></div>
+<div id="scan" class="full"></div><div id="vig" class="full"></div>
+<audio id="vo" class="clip" data-start="0.3" data-duration="16.9" data-track-index="20" src="assets/vo.mp3" data-volume="1"></audio>
+<audio id="music" class="clip" data-start="0" data-duration="18.6" data-track-index="21" src="assets/music.wav" data-volume="0.35"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+const _seen=new Set(),_ft=tl.fromTo.bind(tl);tl.fromTo=(t,a,b,p)=>{if(_seen.has(t))b={...b,immediateRender:false};_seen.add(t);return _ft(t,a,b,p)};
+const O=0.3; // offset da narração
+gsap.set("#grid",{rotationX:62});
+tl.fromTo("#grid",{backgroundPositionY:"0px"},{backgroundPositionY:"4464px",duration:18.6,ease:"none"},0);
+tl.fromTo("#glow",{scale:1},{scale:1.15,duration:18.6,ease:"sine.inOut"},0);
+function flash(sel,t){tl.fromTo(sel,{opacity:.85},{opacity:0,duration:.25,ease:"power2.out"},t);}
+function shake(sel,t,a=18){tl.fromTo(sel,{x:-a},{x:0,duration:.35,ease:"elastic.out(1,.25)"},t);}
+
+// s1 — gancho já visível no frame 0
+tl.fromTo("#s1prog",{scale:1.25,opacity:1},{scale:1,duration:.5,ease:"expo.out"},0);
+tl.fromTo("#s1top",{opacity:.0,y:-30},{opacity:1,y:0,duration:.3},0.05);
+tl.fromTo("#s1jogo",{opacity:0,scale:.4},{opacity:1,scale:1,duration:.4,ease:"back.out(3)"},O+1.3);
+tl.fromTo("#s1robot",{y:60,rotation:-6},{y:0,rotation:6,duration:.45,ease:"sine.inOut",yoyo:true,repeat:5},0);
+tl.fromTo("#s1q",{scale:0,rotation:-40},{scale:1,rotation:12,duration:.5,ease:"back.out(4)"},O+1.78);
+tl.fromTo("#s1prog",{x:0},{x:0,keyframes:{x:[0,-14,12,-6,0]},duration:.3},O+0.68);
+// s2
+flash("#fl1",2.9);
+tl.fromTo("#s2logo",{scale:3,opacity:0},{scale:1,opacity:1,duration:.35,ease:"expo.out"},2.95);
+shake("#s2logo",3.3,30);
+tl.fromTo("#s2quiz",{opacity:0,y:80},{opacity:1,y:0,duration:.35,ease:"power3.out"},O+3.4);
+tl.fromTo("#s2x",{scale:2.5,opacity:0,rotation:-25},{scale:1,opacity:1,rotation:0,duration:.25,ease:"back.out(2)"},O+4.5);
+tl.to("#s2quiz",{opacity:.3,scale:.92,duration:.2},O+4.55);
+// s3
+tl.fromTo("#s3t",{opacity:0,y:-60},{opacity:1,y:0,duration:.3,ease:"back.out(2)"},5.65);
+tl.fromTo("#s3tiles",{opacity:0,scaleX:0},{opacity:1,scaleX:1,duration:.35,ease:"expo.out"},5.7);
+tl.fromTo("#s3robot",{x:0},{x:640,duration:1.1,ease:"steps(3)"},6.0);
+tl.fromTo("#s3portal",{rotation:0,scale:.8},{rotation:360,scale:1.1,duration:1.9,ease:"none"},5.65);
+// s4
+tl.fromTo("#s4t",{opacity:0,scale:1.4},{opacity:1,scale:1,duration:.3,ease:"expo.out"},7.55);
+tl.fromTo("#s4code",{opacity:0,y:120,rotation:-4},{opacity:1,y:0,rotation:0,duration:.4,ease:"back.out(1.8)"},7.6);
+["#s4l1","#s4l2","#s4l3","#s4l4","#s4l5"].forEach((s,i)=>tl.fromTo(s,{opacity:0},{opacity:1,duration:.05},7.9+i*.28));
+tl.fromTo("#s4code",{boxShadow:"0 0 60px rgba(0,255,163,.35),14px 14px 0 #7c3aed"},{boxShadow:"0 0 140px rgba(0,255,163,.9),14px 14px 0 #7c3aed",duration:.3},9.2);
+// s5
+["#s5b1","#s5b2","#s5b3"].forEach((s,i)=>{tl.fromTo(s,{scale:0,y:-200},{scale:1,y:0,duration:.35,ease:"back.out(3)"},9.7+i*.1);
+  tl.to(s,{scale:1.6,opacity:0,rotation:90,duration:.25,ease:"power2.in"},O+9.85+i*.12);});
+tl.fromTo("#s5laser",{scaleX:0,opacity:1},{scaleX:1,duration:.15,ease:"expo.out"},O+9.75);
+tl.to("#s5laser",{opacity:0,duration:.3},O+10.2);
+tl.fromTo("#s5rank",{opacity:0,y:100},{opacity:1,y:0,duration:.35,ease:"power3.out"},O+10.3);
+tl.fromTo("#s5r1",{y:150},{y:0,duration:.5,ease:"back.out(2)"},O+10.9);
+tl.fromTo("#s5r1",{scale:1},{scale:1.08,duration:.2,yoyo:true,repeat:1},O+11.5);
+// s6
+tl.fromTo("#s6t",{opacity:0,y:-50},{opacity:1,y:0,duration:.3,ease:"back.out(2)"},12.7);
+["#s6a","#s6b","#s6c","#s6d"].forEach((s,i)=>tl.fromTo(s,{opacity:0,x:-120},{opacity:1,x:0,duration:.25,ease:"power3.out"},12.85+i*.32));
+tl.fromTo("#s6bar",{scaleX:0},{scaleX:1,duration:1.4,ease:"power2.inOut"},12.85);
+tl.fromTo("#s6n",{opacity:0,scale:.6},{opacity:1,scale:1,duration:.3,ease:"back.out(3)"},14.2);
+// s7
+flash("#fl2",14.85);
+tl.fromTo("#s7stamp",{scale:4,opacity:0,rotation:-20},{scale:1,opacity:1,rotation:-6,duration:.3,ease:"power4.in"},O+14.75);
+shake("#s7stamp",O+15.05,40);
+tl.fromTo("#s7robot",{y:400,opacity:0},{y:0,opacity:1,duration:.5,ease:"back.out(1.6)"},15.2);
+tl.fromTo("#s7crown",{y:-500,rotation:-30},{y:0,rotation:-8,duration:.5,ease:"bounce.out"},15.5);
+tl.fromTo("#s7cta",{opacity:0,scale:.5},{opacity:1,scale:1,duration:.35,ease:"back.out(3)"},O+15.84);
+tl.fromTo("#s7cta",{scale:1},{scale:1.07,duration:.4,ease:"sine.inOut",yoyo:true,repeat:3},16.6);
+tl.fromTo("#s7url",{opacity:0,y:40},{opacity:1,y:0,duration:.3},16.4);
+tl.fromTo("#s7robot",{rotation:-4},{rotation:4,duration:.5,ease:"sine.inOut",yoyo:true,repeat:3},16.0);
+
+tl.fromTo("#aw0_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},0.30);tl.fromTo("#aw0_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},0.50);tl.fromTo("#aw0_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},0.58);tl.fromTo("#aw0_3",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},0.98);tl.to("#aw0_3",{color:"#ffd23f",duration:.05},0.98);tl.fromTo("#aw0_4",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},1.64);tl.fromTo("#aw0_5",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},1.90);tl.fromTo("#aw0_6",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},2.08);tl.to("#aw0_6",{color:"#ffd23f",duration:.05},2.08);tl.fromTo("#aw1_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},2.92);tl.fromTo("#aw1_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},3.02);tl.to("#aw1_1",{color:"#ffd23f",duration:.05},3.02);tl.fromTo("#aw1_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},3.74);tl.fromTo("#aw1_3",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},3.96);tl.fromTo("#aw1_4",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},4.28);tl.fromTo("#aw1_5",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},4.80);tl.fromTo("#aw2_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},5.68);tl.fromTo("#aw2_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},5.92);tl.fromTo("#aw2_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},6.60);tl.fromTo("#aw2_3",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},6.64);tl.to("#aw2_3",{color:"#ffd23f",duration:.05},6.64);tl.fromTo("#aw3_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},7.56);tl.fromTo("#aw3_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},7.94);tl.to("#aw3_1",{color:"#ffd23f",duration:.05},7.94);tl.fromTo("#aw3_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},8.40);tl.fromTo("#aw3_3",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},8.84);tl.fromTo("#aw4_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},9.72);tl.fromTo("#aw4_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},10.02);tl.to("#aw4_1",{color:"#ffd23f",duration:.05},10.02);tl.fromTo("#aw4_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},10.38);tl.fromTo("#aw4_3",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},10.68);tl.fromTo("#aw4_4",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},11.12);tl.fromTo("#aw4_5",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},11.20);tl.to("#aw4_5",{color:"#ffd23f",duration:.05},11.20);tl.fromTo("#aw5_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},11.52);tl.fromTo("#aw5_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},11.76);tl.fromTo("#aw5_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},12.00);tl.to("#aw5_2",{color:"#ffd23f",duration:.05},12.00);tl.fromTo("#aw6_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},12.72);tl.fromTo("#aw6_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},12.88);tl.fromTo("#aw6_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},13.20);tl.fromTo("#aw6_3",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},13.90);tl.fromTo("#aw6_4",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},14.24);tl.fromTo("#aw6_5",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},14.44);tl.to("#aw6_5",{color:"#ffd23f",duration:.05},14.44);tl.fromTo("#aw7_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},14.96);tl.fromTo("#aw7_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},15.12);tl.fromTo("#aw7_2",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},15.22);tl.to("#aw7_2",{color:"#ffd23f",duration:.05},15.22);tl.fromTo("#aw8_0",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},16.14);tl.fromTo("#aw8_1",{opacity:0,y:30,scale:.7},{opacity:1,y:0,scale:1,duration:.18,ease:"back.out(3)"},16.44);tl.to("#aw8_1",{color:"#ffd23f",duration:.05},16.44);
+window.__timelines["main"] = tl;
+tl.seek(0);
+</script></body></html>

@@ -113,17 +113,24 @@ function botFilter(equip) {
   if (!c) return "";
   return c.filter || `hue-rotate(${c.hue}deg)`;
 }
+// Cada combinação chapéu + óculos tem uma imagem própria do robô (public/assets/robo/),
+// desenhada já com o item no lugar certo. A pintura continua sendo um filtro de cor.
+function robotSrc(equip = save.equip) {
+  const parts = [];
+  if (equip.chapeu) parts.push(equip.chapeu.replace(/^hat_/, ""));
+  if (equip.oculos) parts.push(equip.oculos.replace(/^glasses_/, ""));
+  return parts.length ? `assets/robo/${parts.join("+")}.png` : "assets/robot.png";
+}
 function decorate(face, equip = save.equip) {
   face.querySelectorAll(".deco").forEach((d) => d.remove());
   const img = face.querySelector(".sprite, .emoji");
-  if (img) img.style.filter = botFilter(equip);
-  ["chapeu", "oculos"].forEach((slot) => {
-    const it = item(equip[slot]); if (!it) return;
-    const d = document.createElement("div"); d.className = "deco deco-" + slot;
-    const im = new Image(); im.src = it.img; im.alt = "";
-    im.onerror = () => { d.textContent = it.emoji; d.classList.add("deco-emoji"); im.remove(); };
-    d.appendChild(im); face.appendChild(d);
-  });
+  if (!img) return;
+  img.style.filter = botFilter(equip);
+  if (img.tagName === "IMG") {
+    const src = robotSrc(equip);
+    img.onerror = () => { img.onerror = null; img.src = "assets/robot.png"; };
+    if (!img.src.endsWith(src)) img.src = src;
+  }
 }
 function laserColor(equip = save.equip) { const it = item(equip.laser); return it ? it.color : null; }
 function trail(equip = save.equip) { const it = item(equip.rastro); return it ? it.emoji : null; }
@@ -207,5 +214,5 @@ function openChest(modId, title) {
   });
 }
 
-window.RW = { init, ITEMS, ACH, addCoins, grant, stat, checkStars, decorate, laserColor, trail, renderShop, renderTrophies, openChest, toast, refreshCoins, botFilter };
+window.RW = { init, robotSrc, ITEMS, ACH, addCoins, grant, stat, checkStars, decorate, laserColor, trail, renderShop, renderTrophies, openChest, toast, refreshCoins, botFilter };
 })();
